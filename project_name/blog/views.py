@@ -5,10 +5,12 @@ from django.http.response import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Main Page")
+    return render(request,"blog_tmp/index.html")
 
 def blogs(request):
-    return HttpResponse("Blogs Page")
+    return render(request, "blog_tmp/blogs.html")
 
 def blogs_details(request,number):
-    return HttpResponse("Blogs :"+str(number))
+    return render(request, "blog_tmp/blogs-details.html", {
+        "html_number":number
+        })
