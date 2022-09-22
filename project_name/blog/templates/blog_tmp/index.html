@@ -1,11 +1,17 @@
 {% extends "base.html" %}
+{% load static %}  
 
 {% block title_content %}
 Main
 {% endblock  %}
 
+{% block css_file %}
+    <link rel="stylesheet" href="{% static 'blog/css/stile.css' %}">
+{% endblock  %}
+
 {% block body_content %}
 
+    <img src="{% static 'img/hacker.jpg' %}" alt="" width="100">
     <h1>MAİN PAGE BURASI</h1>
 
 {% endblock  %}
