@@ -15,13 +15,9 @@ blog | {{blog.id}}
 {% block body_content %}
     <div class="container">
         <div class="row">
-            {% comment %} {% include "partials/_catogories.html" %} {% endcomment %}
+            {% include "partials/_catogories.html" %}
             <div class="col-9">
-                
-                {% if blog.is_active %}
                     {% include "blog_tmp/partials/_blog.html" %}
-                {% endif %}
-
             </div>
         </div>
     </div>

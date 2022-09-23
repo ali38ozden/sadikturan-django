@@ -75,9 +75,7 @@ Main
         {% include "partials/_catogories.html" %}
         <div class="col-9">
             {% for blog in blogs %}
-                {% if blog.is_active and blog.home_active %}
                     {% include "blog_tmp/partials/_blog.html" %}
-                {% endif %}
             {% endfor %}
         </div>
     </div>
