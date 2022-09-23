@@ -19,10 +19,8 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
                           {% for ful in fuls %}
-                            <li><a class="dropdown-item" href="{% url 'blog_details' ful.id %}">Blog {{ful.id}}</a></li>
+                            <li><a class="dropdown-item" href="{% url 'blog_details' ful.slug %}">{{ful.title}}</a></li>
                           {% endfor %}
-                          {% comment %} <li><a class="dropdown-item" href="{% url 'blog_details' 2 %}">Blog 2</a></li>
-                          <li><a class="dropdown-item" href="{% url 'blog_details' 3 %}">Blog 3</a></li> {% endcomment %}
                           <div class="dropdown-divider"></div>
                           <li><a class="dropdown-item" href="{% url 'blogs' %}">Tümü</a></li>
 
