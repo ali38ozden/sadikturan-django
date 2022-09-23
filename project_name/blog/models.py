@@ -1,4 +1,3 @@
-from turtle import title
 from django.db import models
 from django.utils.text import slugify
 
@@ -9,7 +8,7 @@ class Blog(models.Model):
     description = models.TextField()
     is_acitve = models.BooleanField()
     is_home = models.BooleanField()
-    slug = models.SlugField(null=False, blank=True, unique=True, db_index=True ,editable=False) #unique ==> tekrar eden değer olmasın, db_index ==> her bir değerin bir indexi olsun, default => istediğin bir değer atar blank => doldurması zorunlu alaın iptal eder
+    slug = models.SlugField(null=False, blank=True, unique=True, db_index=True, editable=False) #unique ==> tekrar eden değer olmasın, db_index ==> her bir değerin bir indexi olsun, default => istediğin bir değer atar blank => doldurması zorunlu alaın iptal eder
 
     def __str__(self):
         return f"{self.title}"
@@ -20,8 +19,14 @@ class Blog(models.Model):
 
 class Catogory(models.Model):
     name = models.CharField(max_length=150)
-    
+    slug = models.SlugField(null=False, blank=True, unique=True, db_index=True, editable=False)
+
     def __str__(self):
-        return self.name
+        return f"{self.name}"
+
+    def save(self, *args, **kwarg):
+        self.slug = slugify(self.name)
+        super().save(*args, **kwarg)
+
 
 

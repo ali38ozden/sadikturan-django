@@ -9,6 +9,10 @@ class BlogAdmin(admin.ModelAdmin):
     list_editable = ("is_acitve","is_home")
     search_fields = ("title","description") #arama buttonu ekliyor
     readonly_fields =("slug",)
+
+class CategoryAdminn(admin.ModelAdmin):
+    list_display = ("name","slug")
     
 admin.site.register(Blog, BlogAdmin)
-admin.site.register(Catogory)
+# admin.site.register(Catogory)
+admin.site.register(Catogory, CategoryAdminn)
