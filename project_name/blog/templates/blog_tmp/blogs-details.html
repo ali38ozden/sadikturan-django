@@ -4,7 +4,7 @@
 
 
 {% block title_content %}
-blog | {{html_number}}
+blog | {{blog.id}}
 {% endblock  %}
 
 
@@ -13,6 +13,18 @@ blog | {{html_number}}
 
 
 {% block body_content %}
-    <h1>BlogsDetails {{html_number}}</h1>
+    <div class="container">
+        <div class="row">
+            {% comment %} {% include "partials/_catogories.html" %} {% endcomment %}
+            <div class="col-9">
+                
+                {% if blog.is_active %}
+                    {% include "blog_tmp/partials/_blog.html" %}
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+    
 {% endblock  %}
    
