@@ -58,14 +58,8 @@ def blogs(request):
     return render(request, "blog_tmp/blogs.html", context)
 
 
-def blogs_details(request,number):
-    # blogs= Blog.objects.all()  # burada kendi filitremizi uygulcac birazdan !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    # # selectedBlog= None
-    # # for blog in blogs:
-    # #     if blog["id"]==number:
-    # #         selectedBlog=blog
-    # selectedBlog= [blog for blog in blogs if blog["id"]==number][0]
-    blog = Blog.objects.get(id=number)
+def blogs_details(request,slug):
+    blog = Blog.objects.get(slug=slug)
     return render(request, "blog_tmp/blogs-details.html", {
         "blog":blog,
         "fuls" : Blog.objects.all()
