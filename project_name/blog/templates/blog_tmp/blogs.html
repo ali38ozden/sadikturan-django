@@ -15,6 +15,15 @@ Blog
 
 
 {% block body_content %}
-    <h1>Blogs html here</h1>
+<div class="container">
+    <div class="row">
+        {% include "partials/_catogories.html" %}
+        <div class="col-9">
+            {% include "blog_tmp/partials/_blog.html" %}
+            {% include "blog_tmp/partials/_blog.html" %}
+            {% include "blog_tmp/partials/_blog.html" %}
+        </div>
+    </div>
+</div>
 {% endblock  %}
     

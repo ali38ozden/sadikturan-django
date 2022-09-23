@@ -8,22 +8,27 @@
         <div class="collapse navbar-collapse me-5 justify-content-center" id="navbarText">
             <ul class="navbar-nav  mb-2 mb-lg-0">
                 <li class="nav-item me-1">
-                    <button type="" class="btn btn-dark">Bee Ar-Ge</button>
+                    {% comment %} <button type="btn" class="btn btn-dark" href="http://localhost:8000">Bee Ar-Ge</button> {% endcomment %}
+                    <a href="http://localhost:8000" class="btn btn-dark" role="button" aria-pressed="true">Bee Ar-Ge</a>
                 </li>
                 <li class="nav-item me-1">  
                     <li class="nav-item dropdown me-1">
                         <a class="nav-item dropdown" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <button type="button" class="btn btn-dark" >Ürünlerimiz</button>
+                            
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
-                          <li><a class="dropdown-item" href="1">Blog 1</a></li>
-                          <li><a class="dropdown-item" href="2">Blog 2</a></li>
-                          <li><a class="dropdown-item" href="3">Blog 3</a></li>
+                          <li><a class="dropdown-item" href="http://localhost:8000/blogs/1">Blog 1</a></li>
+                          <li><a class="dropdown-item" href="http://localhost:8000/blogs/2">Blog 2</a></li>
+                          <li><a class="dropdown-item" href="http://localhost:8000/blogs/3">Blog 3</a></li>
+                          <div class="dropdown-divider"></div>
+                          <li><a class="dropdown-item" href="http://localhost:8000/blogs">Tümü</a></li>
+
                         </ul>
                       </li>
                 </li>
                 <li class="nav-item me-1">
-                    <button type="button" class="btn btn-dark">İletişim</button>
+                    <button type="button" href="http://localhost:8000" class="btn btn-dark">İletişim</button>
                 </li>
             </ul>
       </div>

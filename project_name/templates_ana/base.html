@@ -15,19 +15,10 @@
     <title>     
         {% block title_content %}{% endblock %}
     </title>
+    {% include "partials/_navbar.html" %}
 </head>
 <body>
-    {% include "partials/_navbar.html" %}
-    <div class="container">
-        <div class="row">
-            {% include "partials/_catogories.html" %}
-            <div class="col-9">
-                {% include "blog_tmp/partials/_blog.html" %}
-                {% include "blog_tmp/partials/_blog.html" %}
-                {% include "blog_tmp/partials/_blog.html" %}
-            </div>
-        </div>
-    </div>
+
     {% block body_content %}{% endblock  %}
 
     <script src="{% static 'js/bootstreap.min.js' %}"></script>
