@@ -68,7 +68,20 @@ Main
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-  </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        {% include "partials/_catogories.html" %}
+        <div class="col-9">
+            {% for blog in blogs %}
+                {% if blog.is_active and blog.home_active %}
+                    {% include "blog_tmp/partials/_blog.html" %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
 {% endblock  %}
 

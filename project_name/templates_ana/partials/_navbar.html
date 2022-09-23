@@ -3,13 +3,13 @@
   <nav class="navbar navbar-dark navbar-expand-lg bg-dark ">
     <div class="container">
         <img src="{% static 'img/hacker.jpg' %}" alt="" width="30" height="24" class="float-left ">
-      <a class="navbar-brand me-2" href="">Bee Ar-Ge</a>
+      <a class="navbar-brand me-2" href="{% url 'home' %}">Bee Ar-Ge</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"></button>
         <div class="collapse navbar-collapse me-5 justify-content-center" id="navbarText">
             <ul class="navbar-nav  mb-2 mb-lg-0">
                 <li class="nav-item me-1">
                     {% comment %} <button type="btn" class="btn btn-dark" href="http://localhost:8000">Bee Ar-Ge</button> {% endcomment %}
-                    <a href="http://localhost:8000" class="btn btn-dark" role="button" aria-pressed="true">Bee Ar-Ge</a>
+                    <a href="{% url 'home' %}" class="btn btn-dark" role="button" aria-pressed="true">Bee Ar-Ge</a>
                 </li>
                 <li class="nav-item me-1">  
                     <li class="nav-item dropdown me-1">
@@ -18,11 +18,11 @@
                             
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
-                          <li><a class="dropdown-item" href="http://localhost:8000/blogs/1">Blog 1</a></li>
-                          <li><a class="dropdown-item" href="http://localhost:8000/blogs/2">Blog 2</a></li>
-                          <li><a class="dropdown-item" href="http://localhost:8000/blogs/3">Blog 3</a></li>
+                          <li><a class="dropdown-item" href="{% url 'blog_details' 1 %}">Blog 1</a></li>
+                          <li><a class="dropdown-item" href="{% url 'blog_details' 2 %}">Blog 2</a></li>
+                          <li><a class="dropdown-item" href="{% url 'blog_details' 3 %}">Blog 3</a></li>
                           <div class="dropdown-divider"></div>
-                          <li><a class="dropdown-item" href="http://localhost:8000/blogs">Tümü</a></li>
+                          <li><a class="dropdown-item" href="{% url 'blogs' %}">Tümü</a></li>
 
                         </ul>
                       </li>

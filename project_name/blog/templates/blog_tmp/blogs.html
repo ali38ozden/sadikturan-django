@@ -2,10 +2,6 @@
 
 
 
-
-
-
-
 {% block title_content %}
 Blog
 {% endblock %}
@@ -19,9 +15,11 @@ Blog
     <div class="row">
         {% include "partials/_catogories.html" %}
         <div class="col-9">
-            {% include "blog_tmp/partials/_blog.html" %}
-            {% include "blog_tmp/partials/_blog.html" %}
-            {% include "blog_tmp/partials/_blog.html" %}
+            {% for blog in blogs %}
+                {% if blog.is_active %}
+                    {% include "blog_tmp/partials/_blog.html" %}
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 </div>

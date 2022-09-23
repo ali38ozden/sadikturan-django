@@ -7,8 +7,8 @@ from . import views
             # http://127.0.0.1:8000/blogs/3     => blog-details
 
 urlpatterns = [
-    path("", views.index),
+    path("", views.index, name="home"),
     path("index", views.index),
-    path("blogs", views.blogs),
-    path("blogs/<int:number>", views.blogs_details), # buradaki id ve views.py deki id farklı bir isim yap öyle dene olunca
+    path("blogs", views.blogs, name="blogs"),
+    path("blogs/<int:number>", views.blogs_details, name="blog_details"),
 ]
