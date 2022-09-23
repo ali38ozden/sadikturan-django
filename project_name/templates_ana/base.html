@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/hacker.jpg' %}" type="image/x-icon">
     
     {% block css_file %}
     
@@ -16,75 +17,17 @@
     </title>
 </head>
 <body>
-
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-              <img src="{% static 'img/hacker.jpg' %}" alt="" width="30" height="24" class="d-inline-block align-text-top">
-              Bootstrap
-            </a>
-            <a clas="navbar-brand" href="">BlogApp</a>
-            <ul class="navbar-nav me-auto"></ul>
-                <li class="nav-item">
-                    <a clas="nav-link" href="">Blogs</a>
-                </li>
-                <li class="nav-item">
-                    <a clas="nav-link" href="">Home</a>
-                </li>
-
-
-          </div>
-      </nav>
+    {% include "partials/_navbar.html" %}
     <div class="container">
         <div class="row">
-            <div class="col-3">
-                <div class="list-group">
-                    <div class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-                          The current link item
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action">Home</a>
-                        <a href="#" class="list-group-item list-group-item-action">Blog</a>
-                        <a href="#" class="list-group-item list-group-item-action">Python</a>
-                        <a class="list-group-item list-group-item-action disabled">Bee Arge</a>
-                      </div>  
-                </div>
-            </div>
+            {% include "partials/_catogories.html" %}
             <div class="col-9">
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="{% static 'img/hacker.jpg' %}" class="img-fluid rounded-start" alt="...">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                         
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="{% static 'img/hacker.jpg' %}" class="img-fluid rounded-start" alt="...">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                {% include "blog_tmp/partials/_blog.html" %}
+                {% include "blog_tmp/partials/_blog.html" %}
+                {% include "blog_tmp/partials/_blog.html" %}
             </div>
         </div>
     </div>
-    <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">Blogs</a></li>
-    </ul>
     {% block body_content %}{% endblock  %}
 
     <script src="{% static 'js/bootstreap.min.js' %}"></script>
